@@ -70,10 +70,13 @@ if web_apps == "Exploratory Data Analysis":
     # barplots (categorical)
     elif column_type == "Categorical":
         categorical_column = st.sidebar.selectbox('Select a Column', df.select_dtypes(include=['object']).columns)
+        #proportions
+        show_prop = st.checkbox(f"Show Categorical Proportions of {categorical_column}", key = "disabled4", value = True)
+        if show_prop:
+          st.write(df[categorical_column].value_counts() / len(df))
         choose_color = st.color_picker('Pick a Color', "#69b3a2")
         choose_opacity = st.slider(
           'Color Opacity', min_value=0.0, max_value=1.0, step=0.05, value = 1.0)
-        
         fig, ax = plt.subplots()
         ax.bar(x = df[categorical_column].value_counts().index, height = df[categorical_column].value_counts(), color=choose_color, alpha=choose_opacity, edgecolor = "black")
         bar_title = st.text_input('Set Title', 'Barplot')
