@@ -1,5 +1,6 @@
-This streamlit application performs a simple EDA
+# This streamlit application performs a simple EDA
 
+Link to app: https://kevoinno-streamlit-app-stats21-app-xix5zo.streamlit.app/
 ## Structure of Application
 
 - This app allows users to put in a csv file and create customizable histograms or barplots depending on if the variable is categorical or not
