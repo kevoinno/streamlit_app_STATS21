@@ -27,7 +27,7 @@ if web_apps == "Exploratory Data Analysis":
       st.write(df)
 
     column_type = st.sidebar.selectbox('Select Data Type',
-                                       ("Numerical", "Categorical", "Bool", "Date"))
+                                       ("Numerical", "Categorical/Boolean", "Date"))
 
     if column_type == "Numerical":
       numerical_column = st.sidebar.selectbox(
@@ -68,7 +68,7 @@ if web_apps == "Exploratory Data Analysis":
             mime="image/png"
         )
     # barplots (categorical)
-    elif column_type == "Categorical":
+    elif column_type == "Categorical/Boolean":
         categorical_column = st.sidebar.selectbox('Select a Column', df.select_dtypes(include=['object']).columns)
         #proportions
         show_prop = st.checkbox(f"Show Categorical Proportions of {categorical_column}", key = "disabled4", value = True)
