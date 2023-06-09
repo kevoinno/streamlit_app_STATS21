@@ -12,7 +12,7 @@ if uploaded_file is not None:
   df = pd.read_csv(uploaded_file)
   
   st.write(f'Dataframe has shape {df.shape}')
-  
+
   show_dtypes = st.checkbox("Show data types of each column", key="disabled3", value = True)
   if show_dtypes:
     st.write(df.dtypes.rename("Data Types"))
@@ -23,7 +23,7 @@ if uploaded_file is not None:
     st.write(df)
 
   column_type = st.sidebar.selectbox('Select Data Type',
-                                      ("Numerical", "Categorical/Boolean", "Date"))
+                                      ("Numerical", "Categorical/Boolean"))
 
   if column_type == "Numerical":
     numerical_column = st.sidebar.selectbox(
